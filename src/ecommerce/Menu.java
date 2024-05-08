@@ -1,15 +1,23 @@
 package ecommerce;
+import ecommerce.model.Cliente;
+import ecommerce.model.Produto;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import ecommerce.util.Cores;
 
 public class Menu {
 
+	private static Object keypress2;
+
 	public static void main(String[] args) {
 		
 		
+		
 		Scanner leia = new Scanner(System.in);
+		
+		
 
 		int opcao;
 
@@ -36,7 +44,13 @@ public class Menu {
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     ");
 
-			
+			try {
+				opcao = leia.nextInt();
+			}catch(InputMismatchException e){
+				System.out.println("\nDigite valores inteiros!");
+				leia.nextLine();
+				opcao=0;
+			}
 			
 			opcao = leia.nextInt();
 
@@ -52,31 +66,32 @@ public class Menu {
 			switch (opcao) {
 				case 1:
 					System.out.println(Cores.TEXT_WHITE + "Cadastrar novo Cliente\n\n");
-
+				    
+				    keypress();
 					break;
 				case 2:
 					System.out.println(Cores.TEXT_WHITE + "Cadastrar novo Produto\n\n");
-
+					keypress();
 					break;
 				case 3:
 					System.out.println(Cores.TEXT_WHITE + "Acessar Loja\n\n");
-
+					keypress();
 					break;
 				case 4:
 					System.out.println(Cores.TEXT_WHITE + "Buscar Produtos\n\n");
-
+					keypress();
 					break;
 				case 5:
 					System.out.println(Cores.TEXT_WHITE + "Visualizar Carrinho\n\n");
-
+					keypress();
 					break;
 				case 6:
 					System.out.println(Cores.TEXT_WHITE + "Finalizar Compra\n\n");
-
+					keypress();
 					break;
 				case 7:
 					System.out.println(Cores.TEXT_WHITE + "Sair\n\n");
-
+					keypress();
 					break;
 				
 				default:
@@ -86,6 +101,11 @@ public class Menu {
 		}
 	}
     
+	private static void keypress() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public static void sobre() {
 		System.out.println("\n*********************************************************");
 		System.out.println("Projeto Desenvolvido por:                                  ");
@@ -93,9 +113,21 @@ public class Menu {
 		System.out.println("github.com/V1ctorSantos                                    ");
 		System.out.println("***********************************************************");
 	}
+		
+		public static void keyPress() {
 
+			try {
 
+				System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar...");
+				System.in.read();
 
+			} catch (IOException e) {
+
+				System.out.println("Você pressionou uma tecla diferente de enter!");
+			}
 	}
+	
+
+		}
 
 
