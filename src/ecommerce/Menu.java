@@ -1,4 +1,5 @@
 package ecommerce;
+import ecommerce.controller.EcommerceController;
 import ecommerce.model.Cliente;
 import ecommerce.model.Produto;
 
@@ -14,6 +15,7 @@ public class Menu {
 	public static void main(String[] args) {
 		
 		
+		EcommerceController ecommerce = new EcommerceController();
 		
 		Scanner leia = new Scanner(System.in);
 		
@@ -66,7 +68,7 @@ public class Menu {
 			switch (opcao) {
 				case 1:
 					System.out.println(Cores.TEXT_WHITE + "Cadastrar novo Cliente\n\n");
-				    
+				    Cliente.add(null);
 				    keypress();
 					break;
 				case 2:

@@ -44,5 +44,22 @@ public abstract class Cliente {
 	        System.out.println("Endereço: " + this.endereco);
 	        System.out.println("Telefone: " + this.telefone);
 	    }
-	}
+
+		public static void removeIf(Object object) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public static void add(Cliente cliente) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		
+
+		
+			
+			
+		}
+	
 	
